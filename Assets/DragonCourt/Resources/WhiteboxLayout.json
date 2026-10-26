@@ -1,0 +1,1204 @@
+{
+  "blocks": [
+    {
+      "name": "A mountain path",
+      "kind": "floor",
+      "center": [
+        0,
+        -0.5,
+        11
+      ],
+      "size": [
+        12,
+        1,
+        22
+      ]
+    },
+    {
+      "name": "A safe observation ledge",
+      "kind": "roof",
+      "center": [
+        0,
+        5,
+        19
+      ],
+      "size": [
+        12,
+        0.6,
+        6
+      ]
+    },
+    {
+      "name": "A path edge",
+      "kind": "cover",
+      "center": [
+        -6.5,
+        0.6,
+        11
+      ],
+      "size": [
+        1,
+        1.2,
+        22
+      ]
+    },
+    {
+      "name": "A path edge",
+      "kind": "cover",
+      "center": [
+        6.5,
+        0.6,
+        11
+      ],
+      "size": [
+        1,
+        1.2,
+        22
+      ]
+    },
+    {
+      "name": "B outer court",
+      "kind": "floor",
+      "center": [
+        0,
+        -0.5,
+        37
+      ],
+      "size": [
+        76,
+        1,
+        30
+      ]
+    },
+    {
+      "name": "B first covered bay",
+      "kind": "roof",
+      "center": [
+        0,
+        4,
+        27
+      ],
+      "size": [
+        12,
+        0.6,
+        8
+      ]
+    },
+    {
+      "name": "B intermediate bay",
+      "kind": "roof",
+      "center": [
+        0,
+        4,
+        39
+      ],
+      "size": [
+        10,
+        0.6,
+        5
+      ]
+    },
+    {
+      "name": "B arch pillar",
+      "kind": "cover",
+      "center": [
+        -6,
+        2.0,
+        24
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "B arch pillar",
+      "kind": "cover",
+      "center": [
+        -6,
+        2.0,
+        30
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "B arch pillar",
+      "kind": "cover",
+      "center": [
+        -6,
+        2.0,
+        37
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "B arch pillar",
+      "kind": "cover",
+      "center": [
+        -6,
+        2.0,
+        41
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "B arch pillar",
+      "kind": "cover",
+      "center": [
+        6,
+        2.0,
+        24
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "B arch pillar",
+      "kind": "cover",
+      "center": [
+        6,
+        2.0,
+        30
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "B arch pillar",
+      "kind": "cover",
+      "center": [
+        6,
+        2.0,
+        37
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "B arch pillar",
+      "kind": "cover",
+      "center": [
+        6,
+        2.0,
+        41
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "B left cover",
+      "kind": "cover",
+      "center": [
+        -15,
+        1.5,
+        36
+      ],
+      "size": [
+        7,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "B right cover",
+      "kind": "cover",
+      "center": [
+        16,
+        1.5,
+        43
+      ],
+      "size": [
+        6,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "Collapsed central palace - blocks direct route",
+      "kind": "cover",
+      "center": [
+        0,
+        5.0,
+        76
+      ],
+      "size": [
+        44,
+        10,
+        48
+      ]
+    },
+    {
+      "name": "C1 chapel floor",
+      "kind": "floor",
+      "center": [
+        -30,
+        -0.5,
+        76
+      ],
+      "size": [
+        14,
+        1,
+        48
+      ]
+    },
+    {
+      "name": "C1 chapel side wall",
+      "kind": "cover",
+      "center": [
+        -37.5,
+        2.0,
+        76
+      ],
+      "size": [
+        1,
+        4,
+        48
+      ]
+    },
+    {
+      "name": "C1 chapel side wall",
+      "kind": "cover",
+      "center": [
+        -22.5,
+        2.0,
+        76
+      ],
+      "size": [
+        1,
+        4,
+        48
+      ]
+    },
+    {
+      "name": "C1 chapel south roof",
+      "kind": "roof",
+      "center": [
+        -30,
+        4,
+        64
+      ],
+      "size": [
+        14,
+        0.6,
+        24
+      ]
+    },
+    {
+      "name": "C1 chapel north roof",
+      "kind": "roof",
+      "center": [
+        -30,
+        4,
+        89
+      ],
+      "size": [
+        14,
+        0.6,
+        16
+      ]
+    },
+    {
+      "name": "C2 upper gallery",
+      "kind": "floor",
+      "center": [
+        30,
+        7.5,
+        77
+      ],
+      "size": [
+        14,
+        1,
+        30
+      ]
+    },
+    {
+      "name": "C2 bell room roof",
+      "kind": "roof",
+      "center": [
+        30,
+        12,
+        79
+      ],
+      "size": [
+        14,
+        0.6,
+        8
+      ]
+    },
+    {
+      "name": "C2 bell room pillar",
+      "kind": "cover",
+      "center": [
+        23.5,
+        10.0,
+        75
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "C2 bell room pillar",
+      "kind": "cover",
+      "center": [
+        36.5,
+        10.0,
+        75
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "C2 bell room pillar",
+      "kind": "cover",
+      "center": [
+        23.5,
+        10.0,
+        83
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "C2 bell room pillar",
+      "kind": "cover",
+      "center": [
+        36.5,
+        10.0,
+        83
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "C2 high gallery parapet",
+      "kind": "cover",
+      "center": [
+        22.5,
+        8.5,
+        77
+      ],
+      "size": [
+        1,
+        1,
+        30
+      ]
+    },
+    {
+      "name": "C2 high gallery parapet",
+      "kind": "cover",
+      "center": [
+        37.5,
+        8.5,
+        77
+      ],
+      "size": [
+        1,
+        1,
+        30
+      ]
+    },
+    {
+      "name": "D west walk",
+      "kind": "floor",
+      "center": [
+        -25,
+        -0.5,
+        117
+      ],
+      "size": [
+        26,
+        1,
+        18
+      ]
+    },
+    {
+      "name": "D east walk",
+      "kind": "floor",
+      "center": [
+        25,
+        -0.5,
+        117
+      ],
+      "size": [
+        26,
+        1,
+        18
+      ]
+    },
+    {
+      "name": "D covered side walk south",
+      "kind": "roof",
+      "center": [
+        -32,
+        4,
+        111
+      ],
+      "size": [
+        10,
+        0.6,
+        10
+      ]
+    },
+    {
+      "name": "D covered side walk north",
+      "kind": "roof",
+      "center": [
+        -32,
+        4,
+        127
+      ],
+      "size": [
+        10,
+        0.6,
+        10
+      ]
+    },
+    {
+      "name": "D arcade pillar",
+      "kind": "cover",
+      "center": [
+        -37,
+        2.0,
+        107
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "D arcade pillar",
+      "kind": "cover",
+      "center": [
+        -37,
+        2.0,
+        115
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "D arcade pillar",
+      "kind": "cover",
+      "center": [
+        -37,
+        2.0,
+        123
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "D arcade pillar",
+      "kind": "cover",
+      "center": [
+        -37,
+        2.0,
+        131
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "D covered side walk south",
+      "kind": "roof",
+      "center": [
+        32,
+        4,
+        111
+      ],
+      "size": [
+        10,
+        0.6,
+        10
+      ]
+    },
+    {
+      "name": "D covered side walk north",
+      "kind": "roof",
+      "center": [
+        32,
+        4,
+        127
+      ],
+      "size": [
+        10,
+        0.6,
+        10
+      ]
+    },
+    {
+      "name": "D arcade pillar",
+      "kind": "cover",
+      "center": [
+        37,
+        2.0,
+        107
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "D arcade pillar",
+      "kind": "cover",
+      "center": [
+        37,
+        2.0,
+        115
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "D arcade pillar",
+      "kind": "cover",
+      "center": [
+        37,
+        2.0,
+        123
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "D arcade pillar",
+      "kind": "cover",
+      "center": [
+        37,
+        2.0,
+        131
+      ],
+      "size": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "D fallen monument base",
+      "kind": "cover",
+      "center": [
+        -17,
+        1.3,
+        117
+      ],
+      "size": [
+        5,
+        2.6,
+        8
+      ]
+    },
+    {
+      "name": "D monument fragment",
+      "kind": "cover",
+      "center": [
+        18,
+        2.0,
+        121
+      ],
+      "size": [
+        4,
+        4,
+        6
+      ]
+    },
+    {
+      "name": "D boundary wall",
+      "kind": "cover",
+      "center": [
+        -38.5,
+        1.5,
+        118
+      ],
+      "size": [
+        1,
+        3,
+        36
+      ]
+    },
+    {
+      "name": "D boundary wall",
+      "kind": "cover",
+      "center": [
+        38.5,
+        1.5,
+        118
+      ],
+      "size": [
+        1,
+        3,
+        36
+      ]
+    },
+    {
+      "name": "E final gallery",
+      "kind": "floor",
+      "center": [
+        0,
+        -0.5,
+        146
+      ],
+      "size": [
+        12,
+        1,
+        20
+      ]
+    },
+    {
+      "name": "E gallery side wall",
+      "kind": "cover",
+      "center": [
+        -6.5,
+        1.8,
+        146
+      ],
+      "size": [
+        1,
+        3.6,
+        20
+      ]
+    },
+    {
+      "name": "E gallery side wall",
+      "kind": "cover",
+      "center": [
+        6.5,
+        1.8,
+        146
+      ],
+      "size": [
+        1,
+        3.6,
+        20
+      ]
+    },
+    {
+      "name": "E entrance checkpoint canopy",
+      "kind": "roof",
+      "center": [
+        0,
+        4,
+        138
+      ],
+      "size": [
+        12,
+        0.6,
+        4
+      ]
+    },
+    {
+      "name": "E intermediate canopy",
+      "kind": "roof",
+      "center": [
+        0,
+        4,
+        147
+      ],
+      "size": [
+        12,
+        0.6,
+        4
+      ]
+    },
+    {
+      "name": "D north terrace edge",
+      "kind": "cover",
+      "center": [
+        -23.5,
+        0.55,
+        136
+      ],
+      "size": [
+        29,
+        1.1,
+        1
+      ]
+    },
+    {
+      "name": "D north terrace edge",
+      "kind": "cover",
+      "center": [
+        23.5,
+        0.55,
+        136
+      ],
+      "size": [
+        29,
+        1.1,
+        1
+      ]
+    },
+    {
+      "name": "F sword sanctuary",
+      "kind": "floor",
+      "center": [
+        0,
+        -0.5,
+        167
+      ],
+      "size": [
+        40,
+        1,
+        22
+      ]
+    },
+    {
+      "name": "F sanctuary side wall",
+      "kind": "cover",
+      "center": [
+        -20.5,
+        3.5,
+        167
+      ],
+      "size": [
+        1,
+        7,
+        22
+      ]
+    },
+    {
+      "name": "F sanctuary side wall",
+      "kind": "cover",
+      "center": [
+        20.5,
+        3.5,
+        167
+      ],
+      "size": [
+        1,
+        7,
+        22
+      ]
+    },
+    {
+      "name": "F sanctuary north wall",
+      "kind": "cover",
+      "center": [
+        0,
+        3.5,
+        178
+      ],
+      "size": [
+        40,
+        7,
+        1
+      ]
+    },
+    {
+      "name": "F monumental column",
+      "kind": "cover",
+      "center": [
+        -11,
+        6.0,
+        160
+      ],
+      "size": [
+        2,
+        12,
+        2
+      ]
+    },
+    {
+      "name": "F monumental column",
+      "kind": "cover",
+      "center": [
+        -11,
+        6.0,
+        173
+      ],
+      "size": [
+        2,
+        12,
+        2
+      ]
+    },
+    {
+      "name": "F monumental column",
+      "kind": "cover",
+      "center": [
+        11,
+        6.0,
+        160
+      ],
+      "size": [
+        2,
+        12,
+        2
+      ]
+    },
+    {
+      "name": "F monumental column",
+      "kind": "cover",
+      "center": [
+        11,
+        6.0,
+        173
+      ],
+      "size": [
+        2,
+        12,
+        2
+      ]
+    },
+    {
+      "name": "Distant palace tower",
+      "kind": "cover",
+      "center": [
+        -54,
+        15.0,
+        48
+      ],
+      "size": [
+        10,
+        30,
+        12
+      ]
+    },
+    {
+      "name": "Distant palace tower",
+      "kind": "cover",
+      "center": [
+        -54,
+        15.0,
+        107
+      ],
+      "size": [
+        10,
+        30,
+        12
+      ]
+    },
+    {
+      "name": "Distant palace tower",
+      "kind": "cover",
+      "center": [
+        -54,
+        15.0,
+        165
+      ],
+      "size": [
+        10,
+        30,
+        12
+      ]
+    },
+    {
+      "name": "Distant palace tower",
+      "kind": "cover",
+      "center": [
+        54,
+        15.0,
+        48
+      ],
+      "size": [
+        10,
+        30,
+        12
+      ]
+    },
+    {
+      "name": "Distant palace tower",
+      "kind": "cover",
+      "center": [
+        54,
+        15.0,
+        107
+      ],
+      "size": [
+        10,
+        30,
+        12
+      ]
+    },
+    {
+      "name": "Distant palace tower",
+      "kind": "cover",
+      "center": [
+        54,
+        15.0,
+        165
+      ],
+      "size": [
+        10,
+        30,
+        12
+      ]
+    },
+    {
+      "name": "D arrival outer strip",
+      "kind": "floor",
+      "center": [
+        0,
+        -0.5,
+        102
+      ],
+      "size": [
+        76,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "D arrival ramp flank",
+      "kind": "floor",
+      "center": [
+        -21.5,
+        -0.5,
+        106
+      ],
+      "size": [
+        33,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "D arrival ramp flank",
+      "kind": "floor",
+      "center": [
+        21.5,
+        -0.5,
+        106
+      ],
+      "size": [
+        33,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "D north outer strip",
+      "kind": "floor",
+      "center": [
+        0,
+        -0.5,
+        133
+      ],
+      "size": [
+        76,
+        1,
+        6
+      ]
+    },
+    {
+      "name": "D north ramp flank",
+      "kind": "floor",
+      "center": [
+        -21.5,
+        -0.5,
+        128
+      ],
+      "size": [
+        33,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "D north ramp flank",
+      "kind": "floor",
+      "center": [
+        21.5,
+        -0.5,
+        128
+      ],
+      "size": [
+        33,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "D garden central floor",
+      "kind": "floor",
+      "center": [
+        0,
+        -3.5,
+        117
+      ],
+      "size": [
+        24,
+        1,
+        10
+      ]
+    },
+    {
+      "name": "D garden south flank",
+      "kind": "floor",
+      "center": [
+        -8.5,
+        -3.5,
+        110
+      ],
+      "size": [
+        7,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "D garden north flank",
+      "kind": "floor",
+      "center": [
+        -8.5,
+        -3.5,
+        124
+      ],
+      "size": [
+        7,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "D garden south flank",
+      "kind": "floor",
+      "center": [
+        8.5,
+        -3.5,
+        110
+      ],
+      "size": [
+        7,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "D garden north flank",
+      "kind": "floor",
+      "center": [
+        8.5,
+        -3.5,
+        124
+      ],
+      "size": [
+        7,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "D arrival checkpoint canopy",
+      "kind": "roof",
+      "center": [
+        -30,
+        4,
+        105
+      ],
+      "size": [
+        14,
+        0.6,
+        6
+      ]
+    },
+    {
+      "name": "D arrival checkpoint canopy",
+      "kind": "roof",
+      "center": [
+        30,
+        4,
+        105
+      ],
+      "size": [
+        14,
+        0.6,
+        6
+      ]
+    }
+  ],
+  "ramps": [
+    {
+      "name": "C2 ascent",
+      "x": 30,
+      "width": 14,
+      "z0": 42,
+      "z1": 62,
+      "y0": 0,
+      "y1": 8
+    },
+    {
+      "name": "C2 descent",
+      "x": 30,
+      "width": 14,
+      "z0": 92,
+      "z1": 102,
+      "y0": 8,
+      "y1": 0
+    },
+    {
+      "name": "D garden south ramp",
+      "x": 0,
+      "width": 10,
+      "z0": 104,
+      "z1": 112,
+      "y0": 0,
+      "y1": -3
+    },
+    {
+      "name": "D garden north ramp",
+      "x": 0,
+      "width": 10,
+      "z0": 122,
+      "z1": 130,
+      "y0": -3,
+      "y1": 0
+    }
+  ]
+}
