@@ -3,10 +3,53 @@ using DragonCourt;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+[InitializeOnLoad]
 public static class WhiteboxEditor
 {
+    const string DemoScene = "Assets/DragonCourt/Scenes/DragonCourt.unity";
     const string EditableScene = "Assets/DragonCourt/Scenes/DragonCourt_Editable.unity";
+
+    static WhiteboxEditor()
+    {
+        if (!Application.isBatchMode) EditorApplication.delayCall += OpenOnFirstImport;
+    }
+
+    static void OpenOnFirstImport()
+    {
+        if (EditorApplication.isCompiling || EditorApplication.isUpdating)
+        {
+            EditorApplication.delayCall += OpenOnFirstImport;
+            return;
+        }
+        string key = "DragonCourt.DemoOpened." + Application.dataPath;
+        if (EditorPrefs.GetBool(key, false) || EditorApplication.isPlayingOrWillChangePlaymode) return;
+        var active = SceneManager.GetActiveScene();
+        // Respect user-created scenes and unsaved changes.
+        if (active.isDirty || !string.IsNullOrEmpty(active.path)) return;
+        EditorSceneManager.OpenScene(DemoScene, OpenSceneMode.Single);
+        EditorPrefs.SetBool(key, true);
+        EditorApplication.delayCall += FrameWholeLevel;
+    }
+
+    [MenuItem("Dragon Court/Open Demo Scene")]
+    public static void OpenDemo()
+    {
+        if (EditorApplication.isPlayingOrWillChangePlaymode) return;
+        if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
+        EditorSceneManager.OpenScene(DemoScene, OpenSceneMode.Single);
+        EditorApplication.delayCall += FrameWholeLevel;
+    }
+
+    [MenuItem("Dragon Court/Frame Whole Level")]
+    public static void FrameWholeLevel()
+    {
+        SceneView sceneView = SceneView.lastActiveSceneView;
+        if (sceneView == null) sceneView = EditorWindow.GetWindow<SceneView>();
+        sceneView.LookAt(new Vector3(0, 0, 90), Quaternion.Euler(65, 0, 0), 115f, false, true);
+        sceneView.Repaint();
+    }
 
     [MenuItem("Dragon Court/Generate Editable Whitebox")]
     public static void Generate()
@@ -36,6 +79,7 @@ public static class WhiteboxEditor
         AssetDatabase.SaveAssets();
         EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(EditableScene, true) };
         Selection.activeGameObject = root;
+        FrameWholeLevel();
         Debug.Log("Editable whitebox generated. Press Play. Layout source: Resources/WhiteboxLayout.json");
     }
 

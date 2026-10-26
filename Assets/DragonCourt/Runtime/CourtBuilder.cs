@@ -101,6 +101,8 @@ namespace DragonCourt
             camera.farClipPlane = 850;
             camera.clearFlags = CameraClearFlags.SolidColor;
             camera.backgroundColor = new Color(.24f, .3f, .35f);
+            camera.transform.position = new Vector3(0, 9, -12);
+            camera.transform.rotation = Quaternion.Euler(18, 0, 0);
             player.view = camera;
             return player;
         }
@@ -137,25 +139,15 @@ namespace DragonCourt
 
         static void MakeRamp(RampSpec r, Transform parent)
         {
-            float l = r.x - r.width / 2, h = r.x + r.width / 2;
-            float bottom = Mathf.Min(r.y0, r.y1) - .5f;
-            Mesh mesh = new Mesh();
-            mesh.name = r.name;
-            mesh.vertices = new[] {
-                new Vector3(l,bottom,r.z0), new Vector3(h,bottom,r.z0),
-                new Vector3(h,bottom,r.z1), new Vector3(l,bottom,r.z1),
-                new Vector3(l,r.y0,r.z0), new Vector3(h,r.y0,r.z0),
-                new Vector3(h,r.y1,r.z1), new Vector3(l,r.y1,r.z1)
-            };
-            mesh.triangles = new[] {4,7,6,4,6,5, 0,1,2,0,2,3, 0,4,5,0,5,1,
-                3,2,6,3,6,7, 0,3,7,0,7,4, 1,5,6,1,6,2};
-            mesh.RecalculateNormals();
-            mesh.RecalculateBounds();
-            GameObject obj = new GameObject(r.name);
-            obj.transform.SetParent(parent, false);
-            obj.AddComponent<MeshFilter>().sharedMesh = mesh;
-            obj.AddComponent<MeshRenderer>().sharedMaterial = floor;
-            obj.AddComponent<MeshCollider>().sharedMesh = mesh;
+            // A rotated built-in cube persists without transient Mesh assets.
+            float dz = r.z1 - r.z0;
+            float dy = r.y1 - r.y0;
+            Quaternion rotation = Quaternion.Euler(-Mathf.Atan2(dy, dz) * Mathf.Rad2Deg, 0, 0);
+            Vector3 topCenter = new Vector3(r.x, (r.y0 + r.y1) * .5f, (r.z0 + r.z1) * .5f);
+            GameObject obj = Primitive(r.name, PrimitiveType.Cube, parent,
+                topCenter - rotation * Vector3.up * .25f,
+                new Vector3(r.width, .5f, Mathf.Sqrt(dz * dz + dy * dy)), floor, true);
+            obj.transform.localRotation = rotation;
             obj.isStatic = true;
         }
 
@@ -168,6 +160,8 @@ namespace DragonCourt
             label.text = text;
             label.characterSize = .22f;
             label.fontSize = 64;
+            label.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            obj.GetComponent<Renderer>().sharedMaterial = label.font.material;
             label.anchor = TextAnchor.MiddleCenter;
             label.alignment = TextAlignment.Center;
             label.color = new Color(1, .85f, .45f);

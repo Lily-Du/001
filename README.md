@@ -1,23 +1,24 @@
-# 龙眠王庭｜Unity 关卡白盒
+# 龙眠王庭｜Unity 6000.6.6f1 关卡白盒
 
 一个第三人称潜入探索原型：避开盘旋巨龙，穿过废弃王庭，拔出圣剑，再乘龙飞越来时的路。
 
-**这是有场景入口、生成器与玩法代码的 Unity 白盒工程。当前交付环境未安装 Unity，尚未完成 Unity 编译、实际试玩或可执行程序打包。** 地图采样检查通过不等于引擎内验证通过。
+**本版已经提交完整场景、材质、碰撞体、角色和玩法引用。打开场景就能在 Scene 窗口查看地图，不需要先运行生成器。** 当前交付环境未安装 Unity，尚未完成 Unity 6000.6.6f1 内编译、实际试玩或可执行程序打包；本次完成的是代码调整、资源序列化和静态检查。
 
 ![白盒地图](Docs/WhiteboxMap.png)
 
 ## 打开与试玩
 
-1. 安装 **Unity 2022.3 LTS**；工程记录版本为 `2022.3.62f1`。使用内置渲染管线，不需要 URP、第三方角色包或外部模型。
-2. Unity Hub → Add project from disk → 选择包含 `Assets`、`Packages`、`ProjectSettings` 的本文件夹。
-3. 等待脚本导入。打开 `Assets/DragonCourt/Scenes/DragonCourt.unity`，点击 Play；入口场景会在运行时生成整张地图。
-4. **需要在 Scene 窗口查看和编辑白盒时**，退出 Play，执行菜单 **Dragon Court → Generate Editable Whitebox**。生成器会保存 `DragonCourt_Editable.unity` 和所需网格、材质资源，并将其设为构建场景。
-5. 生成后可以逐块修改几何体，再 Play。再次执行生成会替换生成场景，工具会弹出提醒；手工修改前建议 Save As 为自己的版本。
-6. 若要打包，先完成下方验收，再通过 File → Build Settings 选择本机目标平台构建。
+1. 解压 ZIP，找到**直接包含 `Assets`、`Packages`、`ProjectSettings` 的目录**，在 Unity Hub → Add project from disk 中选择它。不要只打开 Assets，也不要新建 URP 工程再复制文件。
+2. 选择 **Unity `6000.6.6f1`** 打开。工程使用内置渲染管线，不需要额外安装 URP、第三方角色包或外部模型。
+3. 等待导入。首次导入在没有用户场景/未保存修改时会尝试自动打开 Demo。也可以直接双击 **`Assets/DragonCourt/Scenes/DragonCourt.unity`**，或菜单 **Dragon Court → Open Demo Scene**。
+4. **查看整张地图**：选择 Scene 标签，再执行 **Dragon Court → Frame Whole Level**。也可选中 Hierarchy 最上方的 `DRAGON COURT` 根对象，按 F 聚焦。地图已保存了 112 个对象和所有依赖引用，未进入 Play 也可以查看和修改。
+5. **试玩**：点击 Play，切到 Game 标签，并点击画面获取键盘焦点。从山道出生，朝北边圣剑殿前进。
+6. **重新生成另一份场景（可选）**：Dragon Court → Generate Editable Whitebox 会另存 `DragonCourt_Editable.unity`。通常不需要执行。再次生成会替换该生成场景，工具会提醒；手工修改前建议 Save As。
+7. 若要打包，先完成下方验收，再通过 Unity 6 的 File → Build Profiles 选择平台构建；默认构建列表已包含 Demo 场景。
 
-入口场景在编辑态只有生成器对象，这是预期行为。想看完整地图请执行第 4 步；生成后的可编辑场景不依赖运行时生成器。
+如果打开后画面空白，先确认打开的是上述 `.unity` 场景，再使用 Frame Whole Level。Game 标签显示的是人物相机视角；Scene 标签可以自由查看全图。遇到编译错误请保留 Console 的第一条错误。本版没有把空场景当作最终交付，也没有在 Play 时重复生成一张地图。
 
-如导入已有项目，需启用旧输入系统：Player Settings → Active Input Handling 选择 **Input Manager (Old)** 或 **Both**。工程使用 `Input.GetKey`，不要求配置任何输入轴。
+工程已保存 `Active Input Handling = Input Manager (Old)`。若仅把 Assets 导入其他工程，则需在 Player Settings → Active Input Handling 选择 **Input Manager (Old)** 或 **Both**。工程使用 `Input.GetKey`，不要求配置任何输入轴。
 
 ## 操作
 
@@ -38,7 +39,8 @@
 
 - 六段连续空间：山道、外庭、双路线、中央庭院、断顶回廊、圣剑殿。
 - 低位礼拜堂路线与 +8 米钟楼路线；中央庭院有 -3 米下沉花园与双侧拱廊。
-- 83 个基础几何体、4 段真实坡道；地图数据由 JSON 驱动。
+- 83 个基础建筑体块、4 段真实坡道；坡道使用旋转的内置立方体及 BoxCollider，不依赖临时网格文件。
+- 默认场景已序列化地形、角色、42 米翼展巨龙、相机、交互物与六个材质；所有资源提交了稳定 `.meta`，避免换电脑后丢失脚本或材质引用。
 - 约 42 米翼展的几何体巨龙、巡游/警觉/搜索/龙息状态、射线遮挡与发现值。
 - 钟楼诱导交互、礼拜堂壁画、可开启并在失败后保持开启的栅门。
 - 失败重试、区域检查点、圣剑交互、登龙过渡与约 48 秒固定路径飞行。
@@ -60,10 +62,13 @@ HUD 暂用英文，避免依赖本机中文字体；说明文档为中文。巨�
 
 ```bash
 python3 tools/validate_whitebox.py
+python3 tools/validate_unity_scene.py
 ```
 
-这会检查实际地图 JSON 的尺寸、坡度、三条候选通行路线的地面连续性和站立空间，以及出生点、检查点、终点位置。生成地图图片可运行 `python3 tools/validate_whitebox.py --map`，需要 Pillow。工具不需要加入 Unity 项目的运行依赖。
+第一条检查地图 JSON 的尺寸、坡度、三条候选通行路线的地面连续性和站立空间，以及出生点、检查点、终点位置。第二条检查保存场景的层级、局部引用、GUID、脚本/相机/交互引用、材质、体块尺寸、坡道表面及输入配置，需 PyYAML。
 
-**Unity 内仍需完成：** 导入无编译错误；生成编辑场景；分别走通东西路线；进入并离开下沉花园；验证检测与实体遮挡；确认龙息与重试；拔剑后完整观看飞行；重新打开生成场景验证材质/网格保存；最后打包运行。
+仅离线维护工具需要 Python 依赖：`python3 -m pip install -r tools/requirements.txt`。生成地图图片可运行 `python3 tools/validate_whitebox.py --map`。重写默认场景可运行 `python3 tools/bake_scene.py`，会覆盖默认场景，手动编辑前请备份；通常在 Unity 里编辑即可。Unity 打开及试玩均不需要 Python。
+
+**Unity 内仍需完成：** 6000.6.6f1 导入无编译错误；检查已提交场景的渲染与碰撞；分别走通东西路线；进入并离开下沉花园；验证检测与实体遮挡；确认龙息与重试；拔剑后完整观看飞行；重新打开场景验证资源保存；最后打包运行。本机没有 Unity Editor，官方版本下载接口被代理拒绝，未执行这些项目。
 
 详细关卡意图见 [Docs/关卡白盒说明.md](Docs/关卡白盒说明.md)，验收清单见 [Docs/试玩验收.md](Docs/试玩验收.md)。初始地图尺度与巡游节奏需要真实试玩调参，尚不主张已经达到固定游玩时长。
